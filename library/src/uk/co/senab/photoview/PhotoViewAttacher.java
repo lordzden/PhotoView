@@ -206,8 +206,10 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener, Vers
 		// If we don't have an ImageView, call cleanup()
 		if (null == imageView) {
 			cleanup();
-			throw new IllegalStateException(
-					"ImageView no longer exists. You should not use this PhotoViewAttacher any more.");
+			Log.e("PhotoViewAttacher",
+					"ImageView is null",
+					new IllegalStateException(
+							"ImageView no longer exists. You should not use this PhotoViewAttacher any more."));
 		}
 
 		return imageView;
